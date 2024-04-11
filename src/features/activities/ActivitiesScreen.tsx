@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
-import { useActivityStore } from './state/useActivityStore';
+import { useActivityStore } from '../../state/useActivityStore';
 import { v4 as uuidv4 } from 'uuid';
 
 const ActivitiesScreen = () => {
