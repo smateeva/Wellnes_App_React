@@ -6,16 +6,13 @@ type Article = {
   title: string;
 };
 
-// Static data for demonstration purposes
 const articles: Article[] = [
   { id: '1', title: 'The Importance of a Balanced Diet' },
   { id: '2', title: '5 Foods That Boost Immunity' },
   { id: '3', title: 'Understanding Macros and Micros' },
-  // ...add more articles as needed
 ];
 
 export const NutritionalArticlesScreen = () => {
-  // Directly use static articles data for FlatList
   return (
     <View style={styles.container}>
       <FlatList

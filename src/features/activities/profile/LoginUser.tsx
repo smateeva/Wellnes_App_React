@@ -3,10 +3,9 @@ import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { login } from '../../../services/authService';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-// Define your navigation stack's params list if it's not already defined
+
 type RootStackParamList = {
-  Profile: undefined; // Replace with actual parameters if necessary
-  // ... other screens in the stack
+  Profile: undefined; 
 };
 
 type LoginScreenProps = {
@@ -20,14 +19,11 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
   const handleLogin = async () => {
     try {
       const user = await login(email, password);
-      // If login is successful, navigate to the Profile screen
       navigation.navigate('Profile');
     } catch (error) {
-      // Error handling with type checking
       if (error instanceof Error) {
         Alert.alert('Login Failed', error.message);
       } else {
-        // Fallback error message if the error object doesn't have a message property
         Alert.alert('Login Failed', 'An unexpected error occurred.');
       }
     }

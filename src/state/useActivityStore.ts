@@ -1,11 +1,10 @@
-// src/state/useActivityStore.ts
 import create from 'zustand';
 
 interface Activity {
   id: string;
-  type: string; // Example: "Running", "Meditation"
-  duration: number; // Duration in minutes
-  date: string; // ISO date string
+  type: string; 
+  duration: number; 
+  date: string; 
 }
 
 interface ActivityStore {

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { useNavigation, StackActions } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../navigation/AppNavigator'; // Adjust the path to where your RootStackParamList is defined
+import { RootStackParamList } from '../../navigation/AppNavigator'; 
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -33,10 +33,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20, // Use padding instead of margins as per your guidelines
+    padding: 20, 
   },
   welcomeText: {
     fontSize: 20,
-    marginBottom: 20, // Spacing for the button, adjust as needed
+    marginBottom: 20, 
   },
 });

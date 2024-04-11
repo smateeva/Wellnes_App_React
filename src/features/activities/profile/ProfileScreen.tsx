@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { fetchProfile } from '../../../services/authService';
-
-// Assuming User has been properly typed in your authService
 import { User } from '../../../services/authService';
 
 const ProfileScreen = () => {
@@ -14,7 +12,7 @@ const ProfileScreen = () => {
       try {
         const profile: User | null = await fetchProfile();
         setUser(profile);
-      } catch (error: any) { // Note: using 'any' is not recommended, type the error properly if possible
+      } catch (error: any) {
         console.error(error.message);
       } finally {
         setLoading(false);
@@ -32,7 +30,6 @@ const ProfileScreen = () => {
     <View style={styles.container}>
       <Text>Name: {user?.name}</Text>
       <Text>Email: {user?.email}</Text>
-      {/* Other profile information */}
     </View>
   );
 };
@@ -42,7 +39,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  // Add styles for profile information
 });
 
 export default ProfileScreen;

@@ -1,5 +1,3 @@
-// src/navigation/AppNavigator.tsx
-// src/navigation/AppNavigator.tsx
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
@@ -18,7 +16,7 @@ export type RootStackParamList = {
   Profile : undefined;
   Login: undefined;
   Registration: undefined;
-  ActivityDetailsScreen: { activityId: string }; // Ensure the type reflects the parameters expected
+  ActivityDetailsScreen: { activityId: string }; 
 };
 
 

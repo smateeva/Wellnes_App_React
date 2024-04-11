@@ -4,12 +4,10 @@ import { register } from '../../../services/authService';
 import { useUserStore } from '../../../state/useUserStore';
 import { useNavigation, StackActions } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../../navigation/AppNavigator'; // Import useNavigation hook
-
+import { RootStackParamList } from '../../../navigation/AppNavigator'; 
 
 const RegistrationScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-  // Hook to get navigation object
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -18,16 +16,13 @@ const RegistrationScreen = () => {
   const handleRegister = async () => {
     try {
       const user = await register(email, password, name);
-      // If registration is successful, navigate to the Profile screen
       navigation.navigate('Profile');
     } catch (error) {
       if (error instanceof Error && error.message === "User already exists") {
         Alert.alert('Registration Failed', 'User with this email already exists. Please use a different email.');
       } else if (error instanceof Error) {
-        // Display other errors as usual
         Alert.alert('Registration Failed', error.message);
       } else {
-        // Fallback error message if the error object doesn't have a message property
         Alert.alert('Registration Failed', 'An unexpected error occurred.');
       }
     }
