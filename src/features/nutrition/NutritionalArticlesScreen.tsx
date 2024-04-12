@@ -5,7 +5,7 @@ type Article = {
   id: string;
   title: string;
   content: string;
-  image: any; // You could also specify a more specific type if you wish
+  image: any; 
 };
 
 const articles: Article[] = [
