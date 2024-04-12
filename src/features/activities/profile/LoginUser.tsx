@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Alert, Image } from 'react-native';
 import { login } from '../../../services/authService';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -11,6 +11,7 @@ type RootStackParamList = {
 type LoginScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Profile'>;
 };
+
 
 const LoginScreen = ({ navigation }: LoginScreenProps) => {
   const [email, setEmail] = useState('');
@@ -31,6 +32,10 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
 
   return (
     <View style={styles.container}>
+       <Image
+        source={require('../../../../assets/login.png')} 
+        style={styles.login}
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -53,9 +58,11 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F1E9F1',
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 20, 
   },
   input: {
     marginBottom: 12,
@@ -63,7 +70,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 4,
+    justifyContent: 'center'
   },
+  login:{
+    width: 220,
+    height: 200,
+    justifyContent:'center'
+  }
 });
 
 export default LoginScreen;

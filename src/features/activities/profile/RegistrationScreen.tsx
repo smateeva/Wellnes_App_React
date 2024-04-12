@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Alert, Image } from 'react-native';
 import { register } from '../../../services/authService';
 import { useUserStore } from '../../../state/useUserStore';
 import { useNavigation, StackActions } from '@react-navigation/native';
@@ -29,6 +29,10 @@ const RegistrationScreen = () => {
   };
   return (
     <View style={styles.container}>
+      <Image
+        source={require('../../../../assets/registration.jpg')} 
+        style={styles.registration}
+      />
       <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName} keyboardType="email-address"
         autoCapitalize="none"/>
       <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} keyboardType="email-address"
@@ -42,9 +46,11 @@ const RegistrationScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F1E9F1',
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 20, 
   },
   input: {
     marginBottom: 12,
@@ -52,7 +58,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 4,
+    justifyContent: 'center'
   },
+  registration:{
+    width: 220,
+    height: 200,
+
+  }
 });
 
 export default RegistrationScreen;

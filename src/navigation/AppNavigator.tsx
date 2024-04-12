@@ -4,7 +4,6 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { HomeScreen } from '../features/home/HomeScreen';
 import ActivitiesScreen from '../features/activities/ActivitiesScreen'
 import { NutritionalArticlesScreen } from '../features/nutrition/NutritionalArticlesScreen';
-import ActivityDetailScreen from '../features/activities/ActivityDetailScreen';
 import ProfileScreen from '../features/activities/profile/ProfileScreen';
 import LoginScreen from '../features/activities/profile/LoginUser';
 import RegistrationScreen from '../features/activities/profile/RegistrationScreen';
@@ -16,7 +15,6 @@ export type RootStackParamList = {
   Profile : undefined;
   Login: undefined;
   Registration: undefined;
-  ActivityDetailsScreen: { activityId: string }; 
 };
 
 
@@ -32,7 +30,7 @@ function AppNavigator() {
         <Stack.Screen name='Profile' component={ProfileScreen} />
         <Stack.Screen name='Login' component={LoginScreen} />
         <Stack.Screen name='Registration' component={RegistrationScreen} />
-        <Stack.Screen name="ActivityDetailsScreen" component={ActivityDetailScreen} />
+  
       </Stack.Navigator>
     </NavigationContainer>
   );
